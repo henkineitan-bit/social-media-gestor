@@ -1,0 +1,369 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gd-primary: #1760FF;
+  --color-gd-navy: #081B3A;
+  --color-gd-secondary: #64748B;
+  --color-gd-surface: #E6EDF7;
+  --color-gd-background: #F7FAFF;
+  --color-gd-success: #12B76A;
+  --color-gd-warning: #F59E0B;
+  --color-gd-border: #DCE6F4;
+  --color-gd-blue-light: #E8F0FF;
+  --color-gd-green-light: #DDF8EC;
+  --color-gd-amber-light: #FFF3D6;
+  --color-gd-gray-light: #EEF2F8;
+
+  --color-brand-primary: #1760FF;
+  --color-brand-navy: #081B3A;
+  --color-brand-secondary: #64748B;
+  --color-brand-surface: #E6EDF7;
+  --color-brand-background: #F7FAFF;
+  --color-brand-success: #12B76A;
+  --color-brand-warning: #F59E0B;
+  --color-brand-border: #DCE6F4;
+}
+
+:root {
+  --gd-primary: #1760FF;
+  --gd-navy: #081B3A;
+  --gd-secondary: #64748B;
+  --gd-surface: #E6EDF7;
+  --gd-background: #F7FAFF;
+  --gd-success: #12B76A;
+  --gd-warning: #F59E0B;
+  --gd-white: #FFFFFF;
+  --gd-border: #DCE6F4;
+  --gd-blue-light: #E8F0FF;
+  --gd-green-light: #DDF8EC;
+  --gd-amber-light: #FFF3D6;
+  --gd-gray-light: #EEF2F8;
+  --gd-font: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --gd-radius-sm: 8px;
+  --gd-radius-md: 14px;
+  --gd-radius-lg: 20px;
+  --gd-radius-pill: 999px;
+  --gd-shadow-card: 0 2px 8px rgba(8, 27, 58, .05);
+  --gd-shadow-popover: 0 12px 32px rgba(8, 27, 58, .12);
+}
+
+.gd-status { display:inline-flex;align-items:center;gap:.55rem;border-radius:999px;padding:.45rem .85rem;font:600 .875rem/1 var(--gd-font);white-space:nowrap; }
+.gd-status::before { content:"";width:.55rem;height:.55rem;border-radius:50%;background:currentColor; }
+.gd-status--activo { color:#12B76A;background:#DDF8EC; }
+.gd-status--borrador { color:#64748B;background:#EEF2F8; }
+.gd-status--pendiente { color:#F59E0B;background:#FFF3D6; }
+.gd-status--entregado { color:#1760FF;background:#E0ECFF; }
+
+.bg-brand-pattern-lines {
+  background-image: url('/brand/patterns/lineas-conectadas.svg');
+  background-repeat: repeat;
+}
+
+.bg-brand-pattern-waves {
+  background-image: url('/brand/patterns/ondas-suaves.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-brand-pattern-dots {
+  background-image: url('/brand/patterns/puntos-y-formas.svg');
+  background-repeat: repeat;
+}
+
+@layer base {
+  html {
+    font-size: 16.5px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  /* Global Modern Sleek Scrollbars (Cross-Browser) */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #94a3b8;
+  }
+
+  *::-webkit-scrollbar-thumb:active {
+    background-color: #1760FF;
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /* Remove bulky Windows default up/down arrow buttons */
+  *::-webkit-scrollbar-button {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #1e293b;
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  /* Improve default form readability */
+  input, textarea, select, button {
+    font-family: inherit;
+  }
+
+  /* Custom Global Styling for Select Elements across tables and forms */
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem 1rem;
+    padding-right: 2.25rem !important;
+    cursor: pointer;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+
+  select option {
+    background-color: #ffffff;
+    color: #0f172a;
+    padding: 8px 12px;
+    font-size: 13.5px;
+    font-weight: 500;
+  }
+}
+
+/* ==========================================================================
+   Scrollbars: Dark Themes & Container Contexts
+   ========================================================================== */
+.dark,
+[data-theme="dark"],
+.dark-theme,
+.bg-slate-900,
+.bg-slate-950,
+.bg-slate-800 {
+  scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
+}
+
+.dark *::-webkit-scrollbar-thumb,
+[data-theme="dark"] *::-webkit-scrollbar-thumb,
+.bg-slate-900 *::-webkit-scrollbar-thumb,
+.bg-slate-950 *::-webkit-scrollbar-thumb,
+.bg-slate-800 *::-webkit-scrollbar-thumb,
+.bg-slate-900::-webkit-scrollbar-thumb,
+.bg-slate-950::-webkit-scrollbar-thumb,
+.bg-slate-800::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.22);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.dark *::-webkit-scrollbar-thumb:hover,
+[data-theme="dark"] *::-webkit-scrollbar-thumb:hover,
+.bg-slate-900 *::-webkit-scrollbar-thumb:hover,
+.bg-slate-950 *::-webkit-scrollbar-thumb:hover,
+.bg-slate-800 *::-webkit-scrollbar-thumb:hover,
+.bg-slate-900::-webkit-scrollbar-thumb:hover,
+.bg-slate-950::-webkit-scrollbar-thumb:hover,
+.bg-slate-800::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================================================
+   Scrollbar Utility Classes (Tailwind / Modern Web UI)
+   ========================================================================== */
+
+/* Ultra thin scrollbar (5px) - for dropdown menus, tags, and small cards */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  border-width: 1px;
+}
+
+/* Extra small (3.5px) */
+.scrollbar-xs {
+  scrollbar-width: thin;
+}
+.scrollbar-xs::-webkit-scrollbar {
+  width: 3.5px;
+  height: 3.5px;
+}
+.scrollbar-xs::-webkit-scrollbar-thumb {
+  border-width: 0.5px;
+}
+
+/* Brand Primary accent (#1760FF) */
+.scrollbar-brand {
+  scrollbar-color: #3b82f6 transparent;
+}
+.scrollbar-brand::-webkit-scrollbar-thumb {
+  background-color: #3b82f6;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.scrollbar-brand::-webkit-scrollbar-thumb:hover {
+  background-color: #1760FF;
+}
+
+/* Subtle light - softer thumb for pure white cards */
+.scrollbar-subtle {
+  scrollbar-color: #e2e8f0 transparent;
+}
+.scrollbar-subtle::-webkit-scrollbar-thumb {
+  background-color: #e2e8f0;
+}
+.scrollbar-subtle::-webkit-scrollbar-thumb:hover {
+  background-color: #cbd5e1;
+}
+
+/* Dark scrollbar */
+.scrollbar-dark {
+  scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
+}
+.scrollbar-dark::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.22);
+}
+.scrollbar-dark::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Hover-only (Mac-style: thumb is invisible until container is hovered) */
+.scrollbar-hover {
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.25s ease;
+}
+.scrollbar-hover::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  transition: background-color 0.25s ease;
+}
+.scrollbar-hover:hover {
+  scrollbar-color: #cbd5e1 transparent;
+}
+.scrollbar-hover:hover::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+}
+.scrollbar-hover:hover::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+/* Hide scrollbar completely while maintaining scroll interaction */
+.scrollbar-none,
+.no-scrollbar {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+.scrollbar-none::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm 8mm 10mm;
+  }
+
+  *, *:before, *:after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11.5pt !important;
+    line-height: 1.45 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .no-print,
+  .print\:hidden,
+  aside,
+  header,
+  footer {
+    display: none !important;
+  }
+
+  .print-page {
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Evitar saltos de página indeseados */
+  tr, .print-avoid-break, .break-inside-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Forzar preservación de fondos en PDF A4 */
+  .bg-blue-50 {
+    background-color: #eff6ff !important;
+  }
+  .bg-slate-50 {
+    background-color: #f8fafc !important;
+  }
+  .bg-slate-100 {
+    background-color: #f1f5f9 !important;
+  }
+  .bg-slate-900 {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+  }
+  .bg-blue-600 {
+    background-color: #2563eb !important;
+    color: #ffffff !important;
+  }
+  .bg-emerald-50 {
+    background-color: #ecfdf5 !important;
+  }
+}

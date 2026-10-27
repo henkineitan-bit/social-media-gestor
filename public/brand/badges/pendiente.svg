@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="42" viewBox="0 0 140 42" role="img" aria-label="Estado Pendiente">
+ <rect x="1" y="1" width="138" height="40" rx="20" fill="#FFF3D6"/>
+ <circle cx="22" cy="21" r="7" fill="#F59E0B"/>
+ <text x="37" y="26" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="650" fill="#F59E0B">Pendiente</text>
+</svg>

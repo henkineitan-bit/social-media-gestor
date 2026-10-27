@@ -1,0 +1,6 @@
+{
+  "name": "SocialQuote Pro - Motor de Cotizaciones & Propuestas A4",
+  "description": "Plataforma SaaS para agencias de Servicios de Gestión Digital y Social Media. Constructor de cotizaciones dinámicas y propuestas comerciales ejecutivas imprimibles en A4.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

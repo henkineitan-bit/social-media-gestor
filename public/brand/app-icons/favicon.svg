@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 340" role="img" aria-label="Gestión Digital isotipo">
+ <g stroke-linejoin="round" stroke-linecap="round">
+  <path d="M48 160 140 104Q150 98 161 104L246 153 154 208Z" fill="#1760FF"/>
+  <path d="M34 210 127 155 214 206 121 260Z" fill="#1760FF"/>
+  <path d="M20 260 113 205 200 257 107 312Z" fill="#1760FF"/>
+  <path d="M158 112 245 58H287" fill="none" stroke="#1760FF" stroke-width="12"/>
+  <circle cx="313" cy="58" r="23" fill="none" stroke="#1760FF" stroke-width="12"/>
+ </g>
+</svg>

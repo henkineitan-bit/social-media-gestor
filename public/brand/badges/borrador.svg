@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="42" viewBox="0 0 130 42" role="img" aria-label="Estado Borrador">
+ <rect x="1" y="1" width="128" height="40" rx="20" fill="#EEF2F8"/>
+ <circle cx="22" cy="21" r="7" fill="#64748B"/>
+ <text x="37" y="26" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="650" fill="#64748B">Borrador</text>
+</svg>

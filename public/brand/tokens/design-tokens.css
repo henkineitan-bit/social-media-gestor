@@ -1,0 +1,28 @@
+:root {
+  --gd-primary: #1760FF;
+  --gd-navy: #081B3A;
+  --gd-secondary: #64748B;
+  --gd-surface: #E6EDF7;
+  --gd-background: #F7FAFF;
+  --gd-success: #12B76A;
+  --gd-warning: #F59E0B;
+  --gd-white: #FFFFFF;
+  --gd-border: #DCE6F4;
+  --gd-blue-light: #E8F0FF;
+  --gd-green-light: #DDF8EC;
+  --gd-amber-light: #FFF3D6;
+  --gd-gray-light: #EEF2F8;
+  --gd-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --gd-radius-sm: 8px;
+  --gd-radius-md: 14px;
+  --gd-radius-lg: 20px;
+  --gd-radius-pill: 999px;
+  --gd-shadow-card: 0 2px 8px rgba(8, 27, 58, .05);
+  --gd-shadow-popover: 0 12px 32px rgba(8, 27, 58, .12);
+}
+.gd-status { display:inline-flex;align-items:center;gap:.55rem;border-radius:999px;padding:.45rem .85rem;font:600 .875rem/1 var(--gd-font);white-space:nowrap; }
+.gd-status::before { content:"";width:.55rem;height:.55rem;border-radius:50%;background:currentColor; }
+.gd-status--activo { color:#12B76A;background:#DDF8EC; }
+.gd-status--borrador { color:#64748B;background:#EEF2F8; }
+.gd-status--pendiente { color:#F59E0B;background:#FFF3D6; }
+.gd-status--entregado { color:#1760FF;background:#E0ECFF; }
